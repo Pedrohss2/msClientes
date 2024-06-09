@@ -1,7 +1,7 @@
 package io.github.pedrohss2.msclientes.controller.exception;
 
-import io.github.pedrohss2.msclientes.dto.CustomError.CustomError;
-import io.github.pedrohss2.msclientes.dto.CustomError.ValidationError;
+import io.github.pedrohss2.msclientes.dto.exception.CustomError.CustomError;
+import io.github.pedrohss2.msclientes.dto.exception.CustomError.ValidationError;
 import io.github.pedrohss2.msclientes.service.exception.BaseDeDadosException;
 import io.github.pedrohss2.msclientes.service.exception.RecursoNaoEncontradoException;
 import org.springframework.http.HttpStatus;

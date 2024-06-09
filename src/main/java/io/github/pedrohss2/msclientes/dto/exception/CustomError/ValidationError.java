@@ -1,6 +1,5 @@
-package io.github.pedrohss2.msclientes.dto.CustomError;
+package io.github.pedrohss2.msclientes.dto.exception.CustomError;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.time.Instant;

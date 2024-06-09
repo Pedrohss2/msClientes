@@ -3,13 +3,13 @@ package io.github.pedrohss2.msclientes.controller;
 import io.github.pedrohss2.msclientes.dto.ClienteDTO;
 import io.github.pedrohss2.msclientes.service.ClienteService;
 import io.swagger.v3.oas.annotations.Operation;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 
 @RestController
@@ -20,8 +20,8 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @Operation(summary = "Buscar cliente com seu respectivo CPF")
     @GetMapping(params = "cpf")
+    @Operation(summary = "Buscar cliente com seu respectivo CPF")
     public ResponseEntity<ClienteDTO> buscarPorCpf(@RequestParam(name = "cpf", defaultValue = "") String cpf) {
         log.info("Obtendo dados do ms de clientes..");
         ClienteDTO clienteDTO =  clienteService.procurarPorCpf(cpf);
@@ -33,8 +33,8 @@ public class ClienteController {
         return ResponseEntity.ok().body(clienteDTO);
     }
 
-    @Operation(summary = "Criar cliente")
     @PostMapping
+    @Operation(summary = "Criar cliente")
     public ResponseEntity<ClienteDTO> criar(@Valid @RequestBody ClienteDTO clienteDTO) {
         log.info("Inserindo um novo cliente no ms de clientes..");
         clienteDTO = clienteService.criar(clienteDTO);
@@ -48,16 +48,16 @@ public class ClienteController {
         return ResponseEntity.created(cabecalho).build();
     }
 
-    @Operation(summary = "Atualizar cliente")
     @PutMapping
+    @Operation(summary = "Atualizar cliente")
     public ResponseEntity<ClienteDTO> atualizar(@Valid @RequestBody ClienteDTO clienteDTO) {
         clienteDTO = clienteService.atualizar(clienteDTO);
 
         return ResponseEntity.ok().build();
     }
 
-    @Operation(summary = "Deletar cliente com seu ID")
     @DeleteMapping("/{id}")
+    @Operation(summary = "Deletar cliente com seu ID")
     public ResponseEntity<ClienteDTO> deletar(@PathVariable Long id) {
         clienteService.deletar(id);
         return ResponseEntity.notFound().build();

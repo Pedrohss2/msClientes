@@ -1,12 +1,13 @@
 package io.github.pedrohss2.msclientes.dto;
 
 import io.github.pedrohss2.msclientes.model.Cliente;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.Negative;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Negative;
+import javax.validation.constraints.NotBlank;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,8 +22,6 @@ public class ClienteDTO {
     @NotBlank(message = "Campo 'nome' não pode ser vazio")
     private String nome;
 
-    @NotBlank(message = "Campo 'idade' não pode ser vazio")
-    @Negative(message = "Campo 'idade' não pode ser negativo")
     @Min(value = 18, message = "A idade precisa ser maior ou igual a 18 para criar um cliente!")
     private Integer idade;
 
