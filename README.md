@@ -11,7 +11,7 @@
 
 Method: GET
 ```
-  http://host.docker.internal:59434/clientes?cpf=17849
+  http://host.docker.internal:59434/clientes?cpf=xxx.xxx.xxx-xx
 ```
 Body (raw)
 ```json
