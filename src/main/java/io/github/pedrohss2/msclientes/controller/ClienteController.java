@@ -2,6 +2,7 @@ package io.github.pedrohss2.msclientes.controller;
 
 import io.github.pedrohss2.msclientes.dto.ClienteDTO;
 import io.github.pedrohss2.msclientes.service.ClienteService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<ClienteDTO> criar(@RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> criar(@Valid @RequestBody ClienteDTO clienteDTO) {
         log.info("Inserindo um novo cliente no ms de clientes..");
         clienteDTO = clienteService.criar(clienteDTO);
 
@@ -45,7 +46,7 @@ public class ClienteController {
     }
 
     @PutMapping
-    public ResponseEntity<ClienteDTO> atualizar(@RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<ClienteDTO> atualizar(@Valid @RequestBody ClienteDTO clienteDTO) {
         clienteDTO = clienteService.atualizar(clienteDTO);
 
         return ResponseEntity.ok().build();
