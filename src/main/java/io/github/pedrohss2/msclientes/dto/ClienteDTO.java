@@ -2,14 +2,14 @@ package io.github.pedrohss2.msclientes.dto;
 
 import io.github.pedrohss2.msclientes.model.Cliente;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class ClienteDTO{
+public class ClienteDTO {
+
     private Long id;
     private String cpf;
     private String nome;
